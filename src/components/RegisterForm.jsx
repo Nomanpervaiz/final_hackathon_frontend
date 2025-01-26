@@ -18,9 +18,9 @@ function RegisterForm() {
     formState: { errors },
   } = useForm();
 
-  const handleSignUpForm = async ({cnic , name , email,password}) => {
+  const handleSignUpForm = async ({ cnic, name, email, password }) => {
     try {
-      console.log("registern form ==>", cnic , name , email,password);
+      console.log("registern form ==>", cnic, name, email, password);
       setLoading(true);
       const response = await axios.post(AppRoutes.register, {
         cnic,
@@ -32,13 +32,13 @@ function RegisterForm() {
       console.log(response?.data);
       const token = response?.data?.data?.token;
       const user = response?.data?.data?.user;
-      console.log("user=>",user,"token=>",token);
-      message.success("User register successfully !")
+      console.log("user=>", user, "token=>", token);
+      message.success("User register successfully !");
       reset();
     } catch (error) {
-        setLoading(false);
-        console.log("error in register user", error);
-         message.error(error?.response ? error?.response.data : error?.message)
+      setLoading(false);
+      console.log("error in register user", error);
+      message.error(error?.response ? error?.response.data : error?.message);
     }
   };
 
@@ -63,9 +63,9 @@ function RegisterForm() {
         className="border border-gray-300 outline-none shadow-md w-full p-3 rounded-sm"
         placeholder="CNIC"
       />
-      {errors.cnic && (
+      {errors?.cnic && (
         <p className="text-red-500 text-left text-sm mt-1">
-          {errors.cnic.message}
+          {errors?.cnic?.message}
         </p>
       )}
       <input
@@ -80,9 +80,9 @@ function RegisterForm() {
         className="border border-gray-300 outline-none shadow-md w-full p-3 rounded-sm"
         placeholder="Name"
       />
-      {errors.name && (
+      {errors?.name && (
         <p className="text-red-500 text-left text-sm mt-1">
-          {errors.username.message}
+          {errors?.username?.message}
         </p>
       )}
 
@@ -98,9 +98,9 @@ function RegisterForm() {
         className="border border-gray-300 outline-none shadow-md w-full p-3 rounded-sm"
         placeholder="Email"
       />
-      {errors.email && (
+      {errors?.email && (
         <p className="text-red-500 text-left text-sm mt-1">
-          {errors.email.message}
+          {errors?.email?.message}
         </p>
       )}
 
@@ -129,9 +129,9 @@ function RegisterForm() {
           />
         )}
       </div>
-      {errors.password && (
+      {errors?.password && (
         <p className="text-red-500 text-left text-sm ">
-          {errors.password.message}
+          {errors?.password?.message}
         </p>
       )}
       <button
