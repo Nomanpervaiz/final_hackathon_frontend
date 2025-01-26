@@ -58,6 +58,10 @@ function RegisterForm() {
             value: 13,
             message: "CNIC should be at least 13 characters",
           },
+          maxLength :{
+            value: 13,
+            message: "CNIC should be at least 13 characters",
+          }
         })}
         type="text"
         className="border border-gray-300 outline-none shadow-md w-full p-3 rounded-sm"
