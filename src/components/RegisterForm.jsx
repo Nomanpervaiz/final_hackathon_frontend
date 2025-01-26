@@ -17,7 +17,7 @@ function RegisterForm() {
     reset,
     formState: { errors },
   } = useForm();
-
+  
   const handleSignUpForm = async ({ cnic, name, email, password }) => {
     try {
       console.log("registern form ==>", cnic, name, email, password);
@@ -38,7 +38,7 @@ function RegisterForm() {
     } catch (error) {
       setLoading(false);
       console.log("error in register user", error);
-      message.error(error?.response ? error?.response.data : error?.message);
+      message.error(error?.response ? error?.response.data : error?.message || "something went wrong, Try Again");
     }
   };
 

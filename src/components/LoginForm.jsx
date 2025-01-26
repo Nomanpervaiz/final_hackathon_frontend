@@ -52,7 +52,7 @@ function LoginForm() {
             "Error in login:",
             error.response ? error.response.data : error.message
         );
-        message.error(error?.response ? error?.response.data : error?.message)
+        message.error(error?.response ? error?.response.data : error?.message || "something went wrong, Try Again")
     }
     setLoading(false)
   };
