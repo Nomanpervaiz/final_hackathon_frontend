@@ -79,8 +79,8 @@ function LoginForm() {
           className="border border-gray-300 outline-none shadow-md w-full p-3 rounded-sm"
           placeholder="CNIC"
         />
-        {errors.cnic && (
-          <p className="text-red-500 text-sm mt-1">{errors.cnic.message}</p>
+        {errors?.cnic && (
+          <p className="text-red-500 text-sm mt-1">{errors?.cnic?.message}</p>
         )}
       </div>
       <div className="w-full sm:w-3/4 lg:w-3/5">
@@ -96,8 +96,8 @@ function LoginForm() {
           className="border border-gray-300 outline-none shadow-md w-full p-3 rounded-sm"
           placeholder="Email"
         />
-        {errors.email && (
-          <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+        {errors?.email && (
+          <p className="text-red-500 text-sm mt-1">{errors?.email?.message}</p>
         )}
       </div>
 
@@ -120,8 +120,8 @@ function LoginForm() {
           :
           <EyeOff onClick={handleVisibility} className="cursor-pointer absolute top-3 right-4"/>
         }
-        {errors.password && (
-          <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
+        {errors?.password && (
+          <p className="text-red-500 text-sm mt-1">{errors?.password?.message}</p>
         )}
       </div>
 
